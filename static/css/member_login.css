@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, .65),
+            rgba(0, 0, 0, .65)),
+
+        url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.overlay {
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+}
+
+.login-card {
+
+    width: 420px;
+
+    background: rgba(255, 255, 255, .12);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, .2);
+
+    border-radius: 25px;
+
+    padding: 45px;
+
+    color: white;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .45);
+
+    animation: fadeUp .8s ease;
+
+}
+
+.logo-circle {
+
+    width: 90px;
+    height: 90px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: #ff9800;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 38px;
+
+    color: white;
+
+    margin-bottom: 20px;
+
+}
+
+.login-card h2 {
+
+    font-weight: 700;
+    margin-bottom: 5px;
+
+}
+
+.login-card p {
+
+    color: #ddd;
+    margin-bottom: 25px;
+
+}
+
+.form-label {
+
+    color: white;
+    font-weight: 600;
+
+}
+
+.input-group-text {
+
+    background: #ff9800;
+    color: white;
+    border: none;
+
+}
+
+.form-control {
+
+    border: none;
+    height: 50px;
+
+}
+
+.form-control:focus {
+
+    box-shadow: none;
+
+}
+
+.login-btn {
+
+    background: #ff9800;
+    color: white;
+    height: 52px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+
+    transition: .3s;
+
+}
+
+.login-btn:hover {
+
+    background: #e68900;
+
+    transform: translateY(-3px);
+
+}
+
+small {
+
+    color: #ddd;
+
+}
+
+.alert {
+
+    border-radius: 12px;
+
+}
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+@media(max-width:500px) {
+
+    .login-card {
+
+        width: 100%;
+        padding: 30px;
+
+    }
+
+}

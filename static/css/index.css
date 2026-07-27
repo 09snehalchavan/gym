@@ -1,0 +1,701 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   GLOBAL
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f7fc;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar {
+    background: rgba(15, 23, 42, .92);
+    backdrop-filter: blur(12px);
+    transition: .4s;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFC107 !important;
+    letter-spacing: 1px;
+}
+
+.navbar-brand i {
+    margin-right: 8px;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    margin-left: 18px;
+    transition: .3s;
+}
+
+.nav-link:hover {
+    color: #FFC107 !important;
+}
+
+.btn-warning {
+    border-radius: 30px;
+    font-weight: 600;
+    padding: 10px 22px;
+}
+
+.btn-success {
+    border-radius: 30px;
+    font-weight: 600;
+    padding: 10px 22px;
+}
+
+/* Navbar Scroll */
+
+.navbar.scrolled {
+
+    background: #0f172a;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+
+        linear-gradient(rgba(0, 0, 0, .75),
+
+            rgba(0, 0, 0, .75)),
+
+        url("../images/gym-bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: #fff;
+
+    position: relative;
+
+}
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: linear-gradient(90deg,
+
+            rgba(0, 0, 0, .25),
+
+            transparent);
+
+}
+
+.hero .container {
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+/* ===========================
+   HERO TEXT
+=========================== */
+
+.hero h5 {
+
+    color: #FFC107;
+
+    font-size: 18px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+}
+
+.hero h1 {
+
+    font-size: 70px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+
+}
+
+.hero h1 span {
+
+    color: #FFC107;
+
+}
+
+.hero p {
+
+    font-size: 19px;
+
+    color: #ddd;
+
+    line-height: 32px;
+
+    margin-bottom: 35px;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.hero-btn {
+
+    padding: 15px 38px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    border-radius: 50px;
+
+    transition: .4s;
+
+    margin-right: 15px;
+
+}
+
+.hero-btn:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
+
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.glass-card {
+
+    background: rgba(255, 255, 255, .12);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    border: 1px solid rgba(255, 255, 255, .15);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+
+    transition: .4s;
+
+}
+
+.glass-card:hover {
+
+    transform: translateY(-10px);
+
+}
+
+.glass-card h3 {
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+}
+
+.glass-card p {
+
+    font-size: 17px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+
+}
+
+/* ===========================
+FEATURE BOX
+=========================== */
+
+.feature-box {
+
+    background: #fff;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+    transition: .4s;
+
+    height: 100%;
+
+}
+
+.feature-box:hover {
+
+    transform: translateY(-10px);
+
+}
+
+.feature-box i {
+
+    font-size: 50px;
+
+    color: #FFC107;
+
+    margin-bottom: 20px;
+
+}
+
+.feature-box h4 {
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+.feature-box p {
+
+    color: #777;
+
+}
+
+/* ===========================
+SECTION TITLE
+=========================== */
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 70px;
+
+}
+
+.section-title h2 {
+
+    font-size: 45px;
+
+    font-weight: 800;
+
+    color: #111827;
+
+}
+
+.section-title p {
+
+    font-size: 18px;
+
+    color: #777;
+
+    margin-top: 10px;
+
+}
+
+/* ==========================================
+   MEMBERSHIP PLANS
+========================================== */
+
+.plan-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: .4s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+    position: relative;
+    overflow: hidden;
+}
+
+.plan-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
+}
+
+.plan-card h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.plan-card h2 {
+    font-size: 48px;
+    color: #ff9800;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plan-card ul li {
+    padding: 10px 0;
+    color: #666;
+}
+
+.plan-card .btn {
+    margin-top: 20px;
+    border-radius: 30px;
+}
+
+
+/* ==========================================
+   COUNTER SECTION
+========================================== */
+
+.counter-section {
+
+    background: #111827;
+
+    padding: 80px 0;
+
+}
+
+.counter-box {
+
+    text-align: center;
+
+    color: #fff;
+
+}
+
+.counter-box i {
+
+    font-size: 50px;
+
+    color: #FFC107;
+
+    margin-bottom: 20px;
+
+}
+
+.counter-box h2 {
+
+    font-size: 48px;
+
+    font-weight: 700;
+
+}
+
+.counter-box p {
+
+    color: #ddd;
+
+}
+
+
+/* ==========================================
+   GALLERY
+========================================== */
+
+.gallery img {
+
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    transition: .4s;
+
+}
+
+.gallery img:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+/* ==========================================
+   TESTIMONIAL
+========================================== */
+
+.testimonial {
+
+    background: #fff;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+
+    transition: .4s;
+
+}
+
+.testimonial:hover {
+
+    transform: translateY(-8px);
+
+}
+
+.testimonial img {
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-bottom: 20px;
+
+}
+
+.testimonial h5 {
+
+    font-weight: 700;
+
+}
+
+.stars {
+
+    color: #FFC107;
+
+    margin: 15px 0;
+
+}
+
+
+/* ==========================================
+   CONTACT
+========================================== */
+
+.contact-section {
+
+    background: #f7f7f7;
+
+    padding: 90px 0;
+
+}
+
+.contact-box {
+
+    background: #fff;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .08);
+
+}
+
+.contact-box input,
+
+.contact-box textarea {
+
+    border-radius: 12px;
+
+    margin-bottom: 18px;
+
+    padding: 14px;
+
+}
+
+.contact-box button {
+
+    border-radius: 30px;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+    background: #0f172a;
+
+    color: #fff;
+
+    padding: 60px 0 20px;
+
+}
+
+footer h3 {
+
+    color: #FFC107;
+
+    margin-bottom: 20px;
+
+}
+
+footer a {
+
+    color: #ddd;
+
+    text-decoration: none;
+
+    display: block;
+
+    margin: 8px 0;
+
+}
+
+footer a:hover {
+
+    color: #FFC107;
+
+}
+
+.footer-bottom {
+
+    border-top: 1px solid rgba(255, 255, 255, .1);
+
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    text-align: center;
+
+}
+
+
+/* ==========================================
+   SOCIAL ICONS
+========================================== */
+
+.social-icons a {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #1f2937;
+
+    color: #fff;
+
+    margin-right: 10px;
+
+    transition: .4s;
+
+}
+
+.social-icons a:hover {
+
+    background: #FFC107;
+
+    color: #000;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:991px) {
+
+    .hero {
+
+        text-align: center;
+
+        padding-top: 120px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 48px;
+
+    }
+
+    .glass-card {
+
+        margin-top: 40px;
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .hero h1 {
+
+        font-size: 38px;
+
+    }
+
+    .section-title h2 {
+
+        font-size: 34px;
+
+    }
+
+    .counter-box {
+
+        margin-bottom: 35px;
+
+    }
+
+    .plan-card {
+
+        margin-bottom: 30px;
+
+    }
+
+}
+

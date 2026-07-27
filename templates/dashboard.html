@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    ```
+    <title>Gym Management - Admin Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        body {
+            background: #f5f7fb;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .sidebar {
+            width: 270px;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #0f172a, #1e293b);
+            color: #fff;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 24px 18px;
+            width: 260px;
+            background: #111827;
+            height: 100vh;
+            overflow-y: auto;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar .brand {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar .nav-link {
+            color: #cbd5e1;
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.2s;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        .main {
+            margin-left: 260px;
+            padding: 25px;
+        }
+
+        .topbar {
+            background: #fff;
+            border-radius: 16px;
+            padding: 18px 22px;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            border: 0;
+            border-radius: 18px;
+            color: #fff;
+            padding: 22px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+            min-height: 150px;
+        }
+
+        .stat-card h6 {
+            opacity: 0.9;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .bg-members {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        }
+
+        .bg-active {
+            background: linear-gradient(135deg, #16a34a, #15803d);
+        }
+
+        .bg-inactive {
+            background: linear-gradient(135deg, #64748b, #334155);
+            color: #ffffff !important;
+        }
+
+        .bg-inactive h6,
+        .bg-inactive .value,
+        .bg-inactive small {
+            color: #ffffff !important;
+        }
+
+        .bg-expired {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+
+        .bg-attendance {
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
+        }
+
+        .bg-income {
+            background: linear-gradient(135deg, #ea580c, #c2410c);
+        }
+
+        .quick-actions .btn {
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-weight: 600;
+        }
+
+        .panel {
+            background: #fff;
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                position: static;
+                width: 100%;
+                min-height: auto;
+                border-radius: 0 0 18px 18px;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 18px;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div class="sidebar">
+
+        <div class="brand">
+            <i class="fa-solid fa-dumbbell"></i>
+            <span>Gym Admin</span>
+        </div>
+
+        <a href="/dashboard" class="nav-link">
+            <i class="fa-solid fa-house"></i> Dashboard
+        </a>
+
+        <a href="/add_member" class="nav-link">
+            <i class="fa-solid fa-user-plus"></i> Add Member
+        </a>
+
+        <a href="/view_members" class="nav-link">
+            <i class="fa-solid fa-users"></i> View Members
+        </a>
+
+        <a href="/search_member" class="nav-link">
+            <i class="fa-solid fa-magnifying-glass"></i> Search Member
+        </a>
+
+        <a href="/inactive_members" class="nav-link inactive-link">
+            <i class="fa-solid fa-user-slash"></i> Inactive Members
+        </a>
+
+        <a href="/add_plan" class="nav-link">
+            <i class="fa-solid fa-plus-circle"></i> Add Membership Plan
+        </a>
+
+        <a href="/view_plans" class="nav-link">
+            <i class="fa-solid fa-id-card"></i> View Membership Plans
+        </a>
+
+        <a href="/assign_membership" class="nav-link">
+            <i class="fa-solid fa-user-check"></i> Assign Membership
+        </a>
+
+        <a href="/view_member_memberships" class="nav-link">
+            <i class="fa-solid fa-address-card"></i> Membership History
+        </a>
+
+        <a href="/receive_payment" class="nav-link">
+            <i class="fa-solid fa-wallet"></i> Receive Payment
+        </a>
+
+        <a href="/payment_history" class="nav-link">
+            <i class="fa-solid fa-file-invoice-dollar"></i> Payment History
+        </a>
+
+        <a href="#" class="nav-link">
+            <i class="fa-solid fa-clipboard-check"></i> Attendance
+        </a>
+
+        <a href="/logout" class="nav-link">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
+
+    </div>
+
+    <div class="main">
+
+        <div class="topbar d-flex flex-wrap justify-content-between align-items-center gap-3">
+
+            <div>
+                <h2 class="mb-1 fw-bold">Welcome, Admin 👋</h2>
+                <p class="text-muted mb-0">Monitor members, memberships, attendance, and gym performance from one place.
+                </p>
+            </div>
+
+            <div class="text-end">
+                <div class="fw-semibold">Gym Management System</div>
+                <small class="text-muted">Admin Panel</small>
+            </div>
+
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="row g-4">
+
+            <div class="col-12 col-md-6 col-xl-3">
+                <div class="stat-card bg-members">
+                    <h6>Total Members</h6>
+                    <div class="value">{{ total_members }}</div>
+                    <small>Registered gym members</small>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-3">
+                <div class="stat-card bg-active">
+                    <h6>Active Members</h6>
+                    <div class="value">{{ active_members }}</div>
+                    <small>Currently active members</small>
+                </div>
+            </div>
+
+            <!-- ✅ New Inactive Members Card -->
+            <div class="col-12 col-md-6 col-xl-3">
+                <div class="stat-card bg-inactive">
+                    <h6>Inactive Members</h6>
+                    <div class="value">{{ inactive_members }}</div>
+                    <small>Deactivated members</small>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-3">
+                <div class="stat-card bg-expired">
+                    <h6>Expired Memberships</h6>
+                    <div class="value">{{ expired_memberships }}</div>
+                    <small>Require renewal</small>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-3">
+                <div class="stat-card bg-attendance">
+                    <h6>Today Attendance</h6>
+                    <div class="value">0</div>
+                    <small>Will connect with attendance module</small>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-3">
+                <div class="stat-card bg-income">
+                    <h6>Monthly Income</h6>
+                    <div class="value">₹{{ monthly_income }}</div>
+                    <small>Will connect with payment module</small>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel mt-4">
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="mb-0 fw-bold">Quick Actions</h5>
+                <small class="text-muted">Frequently used admin actions</small>
+            </div>
+
+            <div class="row g-3 quick-actions">
+
+                <div class="col-12 col-md-4 col-lg-3">
+                    <a href="/add_member" class="btn btn-primary w-100">
+                        <i class="fa-solid fa-user-plus me-2"></i>Add Member
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-3">
+                    <a href="/assign_membership" class="btn btn-success w-100">
+                        <i class="fa-solid fa-link me-2"></i>Assign Membership
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-3">
+                    <a href="/view_member_memberships" class="btn btn-warning w-100">
+                        <i class="fa-solid fa-calendar-check me-2"></i>View Memberships
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-3">
+                    <a href="/view_members" class="btn btn-dark w-100">
+                        <i class="fa-solid fa-users me-2"></i>View Members
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    ```
+
+</body>
+
+</html>
