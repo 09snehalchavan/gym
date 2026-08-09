@@ -1,0 +1,314 @@
+/*=========================================
+        Responsive CSS
+==========================================*/
+
+/* Large Laptop */
+
+@media (max-width:1200px) {
+
+    .hero h1 {
+
+        font-size: 55px;
+
+    }
+
+}
+
+
+/* Laptop */
+
+@media (max-width:992px) {
+
+    section {
+
+        padding: 70px 0;
+
+    }
+
+    .hero {
+
+        text-align: center;
+        padding-top: 120px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 45px;
+
+    }
+
+    .hero p {
+
+        font-size: 17px;
+
+    }
+
+    .hero-btn {
+
+        margin-bottom: 15px;
+
+    }
+
+    .feature-box {
+
+        margin-top: 25px;
+
+    }
+
+    .navbar-brand {
+
+        font-size: 24px;
+
+    }
+
+    .card {
+
+        margin-bottom: 30px;
+
+    }
+
+}
+
+
+/* Tablet */
+
+@media (max-width:768px) {
+
+    .hero {
+
+        min-height: auto;
+        padding: 120px 0 80px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 38px;
+
+        line-height: 1.3;
+
+    }
+
+    .hero p {
+
+        font-size: 16px;
+
+    }
+
+    .hero-btn {
+
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+
+    }
+
+    .navbar {
+
+        padding: 10px 0;
+
+    }
+
+    .navbar-brand {
+
+        font-size: 22px;
+
+    }
+
+    .navbar-nav {
+
+        text-align: center;
+        padding-top: 20px;
+
+    }
+
+    .nav-item {
+
+        margin-bottom: 10px;
+
+    }
+
+    .feature-box {
+
+        padding: 22px;
+
+    }
+
+    .card {
+
+        margin-bottom: 25px;
+
+    }
+
+    .card h1 {
+
+        font-size: 40px;
+
+    }
+
+    img {
+
+        margin-bottom: 25px;
+
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width:576px) {
+
+    section {
+
+        padding: 60px 0;
+
+    }
+
+    .container {
+
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+    .hero {
+
+        padding-top: 110px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 30px;
+
+    }
+
+    .hero p {
+
+        font-size: 15px;
+
+    }
+
+    .hero-btn {
+
+        font-size: 15px;
+        padding: 12px 20px;
+
+    }
+
+    .navbar-brand {
+
+        font-size: 18px;
+
+    }
+
+    .feature-box {
+
+        padding: 20px;
+
+    }
+
+    .feature-box h4 {
+
+        font-size: 20px;
+
+    }
+
+    .card {
+
+        padding: 20px !important;
+
+    }
+
+    .card h1 {
+
+        font-size: 35px;
+
+    }
+
+    .card h3 {
+
+        font-size: 22px;
+
+    }
+
+    .form-control {
+
+        padding: 12px;
+
+        font-size: 15px;
+
+    }
+
+    textarea {
+
+        min-height: 130px;
+
+    }
+
+    footer h5 {
+
+        font-size: 18px;
+
+    }
+
+    footer p {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/* Small Mobile */
+
+@media (max-width:400px) {
+
+    .hero h1 {
+
+        font-size: 26px;
+
+    }
+
+    .hero p {
+
+        font-size: 14px;
+
+    }
+
+    .hero-btn {
+
+        font-size: 14px;
+
+        padding: 10px 15px;
+
+    }
+
+    .navbar-brand {
+
+        font-size: 16px;
+
+    }
+
+    .feature-box {
+
+        padding: 16px;
+
+    }
+
+    .feature-box i {
+
+        font-size: 34px;
+
+    }
+
+    .card h1 {
+
+        font-size: 30px;
+
+    }
+
+}

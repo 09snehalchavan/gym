@@ -6,197 +6,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gym Management System</title>
+    <title>Gym Management System | Fitness Club</title>
+
+    <meta name="description"
+        content="Professional Gym Management System developed using Flask, Bootstrap, HTML, CSS and JavaScript.">
+
+    <meta name="keywords" content="Gym, Fitness, Flask, Dashboard, Membership, Attendance">
+
+    <meta name="author" content="Snehal Chavan">
+
+    <!-- Bootstrap -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Font -->
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", sans-serif;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        body {
-            background: #f8f9fa;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-        /* Navbar */
+    <!-- Font Awesome -->
 
-        .navbar {
-            background: rgba(0, 0, 0, .85);
-            backdrop-filter: blur(10px);
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-        .navbar-brand {
-            color: #ffc107 !important;
-            font-weight: bold;
-            font-size: 28px;
-        }
+    <!-- Bootstrap Icons -->
 
-        .navbar-brand i {
-            margin-right: 8px;
-        }
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-        .nav-link {
-            color: white !important;
-            margin-right: 15px;
-            transition: .3s;
-        }
+    <!-- AOS Animation -->
 
-        .nav-link:hover {
-            color: #ffc107 !important;
-        }
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
-        /* Hero */
+    <!-- Custom CSS -->
 
-        .hero {
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-            min-height: 100vh;
-
-            background:
-                linear-gradient(rgba(0, 0, 0, .65),
-                    rgba(0, 0, 0, .65)),
-                url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1800&auto=format&fit=crop");
-
-            background-size: cover;
-
-            background-position: center;
-
-            display: flex;
-
-            align-items: center;
-
-            color: white;
-        }
-
-        .hero h1 {
-
-            font-size: 65px;
-
-            font-weight: bold;
-        }
-
-        .hero span {
-
-            color: #ffc107;
-        }
-
-        .hero p {
-
-            font-size: 20px;
-
-            margin-top: 20px;
-
-            margin-bottom: 30px;
-        }
-
-        .hero-btn {
-
-            padding: 14px 35px;
-
-            border-radius: 50px;
-
-            font-size: 18px;
-
-            margin-right: 15px;
-        }
-
-        .feature-box {
-
-            background: rgba(255, 255, 255, .15);
-
-            backdrop-filter: blur(12px);
-
-            border-radius: 15px;
-
-            padding: 20px;
-
-            text-align: center;
-
-            margin-top: 25px;
-
-            transition: .3s;
-        }
-
-        .feature-box:hover {
-
-            transform: translateY(-8px);
-        }
-
-        .feature-box i {
-
-            font-size: 40px;
-
-            color: #ffc107;
-
-            margin-bottom: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 
 </head>
 
 <body>
 
-    <!-- Navbar -->
+    <!-- ===========================
+        Premium Navbar
+============================ -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+    <nav class="navbar navbar-expand-lg fixed-top">
 
         <div class="container">
 
-            <a class="navbar-brand fw-bold fs-3" href="/">
-                <i class="fa-solid fa-dumbbell text-warning"></i>
-                GYM MANAGEMENT SYSTEM
+            <a class="navbar-brand" href="/">
+                <i class="fa-solid fa-dumbbell me-2"></i>
+                GYM PRO
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
 
                 <span class="navbar-toggler-icon"></span>
 
             </button>
 
-            <div class="collapse navbar-collapse" id="menu">
+            <div class="collapse navbar-collapse" id="navbarMenu">
 
-                <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
 
-                    <li class="nav-item me-3">
-
-                        <span class="text-light">
-
-                            <i class="fa-solid fa-shield-halved text-warning"></i>
-
-                            Secure Gym ERP
-
-                        </span>
-
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
 
-                        <a href="/login" class="btn btn-warning rounded-pill px-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#plans">Plans</a>
+                    </li>
 
-                            <i class="fa-solid fa-user-shield"></i>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
 
-                            Admin Login
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+
+                        <a href="/login" class="btn btn-warning">
+
+                            <i class="fa-solid fa-user-shield me-2"></i>
+
+                            Admin
 
                         </a>
 
                     </li>
 
-                    <li class="nav-item ms-2">
+                    <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
 
-                        <a href="/member_login" class="btn btn-success rounded-pill px-4">
+                        <a href="/member_login" class="btn btn-success">
 
-                            <i class="fa-solid fa-user"></i>
+                            <i class="fa-solid fa-user me-2"></i>
 
-                            Member Login
+                            Member
 
                         </a>
 
@@ -210,168 +122,259 @@
 
     </nav>
 
-    <!-- Hero -->
+
+    <!-- ===========================
+        Hero Section
+============================ -->
 
     <section class="hero">
 
         <div class="container">
 
-            <div class="row align-items-center">
+            <div class="row align-items-center gy-5">
 
-                <div class="col-lg-7">
+                <!-- Left -->
 
-                    <h1>
+                <div class="col-lg-6">
+                    <br><br>
+                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-3">
 
-                        TRAIN <span>HARD</span>
+                        #1 Smart Gym Management Software
 
-                        <br>
+                    </span>
 
-                        STAY <span>STRONG</span>
+                    <h1 class="slide-left">
+
+                        Build Your
+
+                        <span>Dream Body</span>
+
+                        With
+
+                        <span>Smart Fitness</span>
 
                     </h1>
 
-                    <p>
+                    <p class="mt-4">
 
-                        Complete Gym Management Software with
-
-                        Member Management, Membership Plans,
-
-                        Attendance, Payments, Reports and Dashboard.
+                        Manage Members, Attendance,
+                        Payments, Trainers, Reports,
+                        Membership Plans and Complete
+                        Gym Operations using one
+                        Professional Dashboard.
 
                     </p>
 
-                    <a href="/login" class="btn btn-warning hero-btn">
+                    <div class="mt-4">
 
-                        <i class="fa-solid fa-user-shield"></i>
+                        <a href="/login" class="btn btn-warning hero-btn pulse">
 
-                        Admin Panel
+                            <i class="fa-solid fa-user-shield me-2"></i>
 
-                    </a>
+                            Admin Dashboard
 
-                    <a href="/member_login" class="btn btn-success hero-btn">
+                        </a>
 
-                        <i class="fa-solid fa-user"></i>
+                        <a href="/member_login" class="btn btn-success hero-btn">
 
-                        Member Panel
+                            <i class="fa-solid fa-arrow-right me-2"></i>
 
-                    </a>
+                            Member Portal
 
-                </div>
-
-                <div class="col-lg-5">
-
-                    <div class="feature-box">
-
-                        <i class="fa-solid fa-users"></i>
-
-                        <h4>500+ Active Members</h4>
-
-                        <p>
-
-                            Manage members with modern dashboard.
-
-                        </p>
+                        </a>
 
                     </div>
 
-                    <div class="feature-box">
 
-                        <i class="fa-solid fa-credit-card"></i>
 
-                        <h4>Membership & Payments</h4>
+                    <!-- Right -->
 
-                        <p>
+                    <div class="col-lg-6 text-center">
 
-                            Track plans, renewals and monthly income.
-
-                        </p>
-
-                    </div>
-
-                    <div class="feature-box">
-
-                        <i class="fa-solid fa-location-dot"></i>
-
-                        <h4>GPS Attendance</h4>
-
-                        <p>
-
-                            Smart attendance using live location.
-
-                        </p>
+                        <img src="{{ url_for('static', filename='images/hero-gym.png') }}"
+                            class="img-fluid float zoom-in" alt="Gym Image">
 
                     </div>
 
                 </div>
 
             </div>
-
-        </div>
 
     </section>
 
+    <!-- ===========================
+        About Section
+=========================== -->
 
-    <section id="about" class="py-5 bg-light">
+    <section id="about" class="py-5 reveal">
 
         <div class="container">
 
+            <!-- Heading -->
+
             <div class="text-center mb-5">
-                <h2 class="fw-bold">About Our Gym</h2>
-                <p class="text-muted">
-                    Your Fitness Journey Starts Here
+
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">
+                    ABOUT US
+                </span>
+
+                <h2 class="fw-bold mt-3 display-5">
+
+                    Transform Your Body,
+                    <span class="text-warning">Transform Your Life</span>
+
+                </h2>
+
+                <p class="text-muted mx-auto" style="max-width:700px;">
+
+                    We provide world-class fitness facilities,
+                    certified trainers, modern equipment,
+                    smart attendance system and personalized
+                    workout plans to help you achieve your goals.
+
                 </p>
+
             </div>
 
-            <div class="row align-items-center">
+            <div class="row align-items-center gy-5">
+
+                <!-- Left Image -->
 
                 <div class="col-lg-6">
 
                     <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop"
-                        class="img-fluid rounded shadow">
+                        class="img-fluid rounded-4 shadow-lg" alt="Gym">
 
                 </div>
 
+                <!-- Right Content -->
+
                 <div class="col-lg-6">
 
-                    <h3 class="fw-bold mb-3">
-                        Welcome to Gym Management System
+                    <h3 class="fw-bold mb-4">
+
+                        Welcome to
+                        <span class="text-warning">
+                            Gym Management System
+                        </span>
+
                     </h3>
 
                     <p class="text-secondary">
 
-                        Our fitness center provides world-class gym equipment,
-                        certified trainers, personalized diet plans and modern
-                        attendance tracking system.
+                        Our fitness center combines modern
+                        technology with expert coaching.
+                        We make member management,
+                        attendance, payments and fitness
+                        tracking easy through one smart system.
 
                     </p>
 
+                    <!-- Features -->
+
                     <div class="row mt-4">
 
-                        <div class="col-6 mb-3">
+                        <div class="col-md-6 mb-4">
 
-                            ✅ Professional Trainers
+                            <div class="feature-box text-center">
+
+                                <i class="fa-solid fa-dumbbell"></i>
+
+                                <h5 class="fw-bold mt-3">
+
+                                    Modern Equipment
+
+                                </h5>
+
+                                <p class="small text-muted">
+
+                                    Latest machines for
+                                    strength & cardio.
+
+                                </p>
+
+                            </div>
 
                         </div>
 
-                        <div class="col-6 mb-3">
+                        <div class="col-md-6 mb-4">
 
-                            ✅ Modern Equipment
+                            <div class="feature-box text-center">
+
+                                <i class="fa-solid fa-user-group"></i>
+
+                                <h5 class="fw-bold mt-3">
+
+                                    Expert Trainers
+
+                                </h5>
+
+                                <p class="small text-muted">
+
+                                    Certified professional
+                                    fitness coaches.
+
+                                </p>
+
+                            </div>
 
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-md-6 mb-4">
 
-                            ✅ GPS Attendance
+                            <div class="feature-box text-center">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <h5 class="fw-bold mt-3">
+
+                                    Smart Attendance
+
+                                </h5>
+
+                                <p class="small text-muted">
+
+                                    GPS based attendance
+                                    management.
+
+                                </p>
+
+                            </div>
 
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-md-6 mb-4">
 
-                            ✅ Membership Plans
+                            <div class="feature-box text-center">
+
+                                <i class="fa-solid fa-heart-pulse"></i>
+
+                                <h5 class="fw-bold mt-3">
+
+                                    Healthy Lifestyle
+
+                                </h5>
+
+                                <p class="small text-muted">
+
+                                    Nutrition guidance &
+                                    workout planning.
+
+                                </p>
+
+                            </div>
 
                         </div>
 
                     </div>
+
+                    <a href="/member_login" class="btn btn-warning mt-3">
+
+                        <i class="fa-solid fa-arrow-right me-2"></i>
+
+                        Join Our Gym
+
+                    </a>
 
                 </div>
 
@@ -381,49 +384,179 @@
 
     </section>
 
-    <section id="plans" class="py-5">
+    <!-- ===========================
+        Why Choose Us
+=========================== -->
+
+    <section class="py-5 bg-light reveal">
 
         <div class="container">
 
             <div class="text-center mb-5">
 
-                <h2 class="fw-bold">
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">
+                    WHY CHOOSE US
+                </span>
 
-                    Membership Plans
+                <h2 class="display-5 fw-bold mt-3">
+
+                    More Than Just A
+                    <span class="text-warning">
+                        Gym
+                    </span>
 
                 </h2>
 
                 <p class="text-muted">
 
-                    Choose the plan that suits your fitness goals.
+                    Experience premium fitness facilities with expert trainers,
+                    modern equipment and advanced gym management.
 
                 </p>
 
             </div>
 
-            <div class="row">
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card h-100 p-4 text-center border-0 shadow">
+
+                        <i class="fa-solid fa-dumbbell fa-3x text-warning mb-3"></i>
+
+                        <h4 class="fw-bold">
+
+                            Modern Equipment
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            International quality fitness machines
+                            for strength and cardio training.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card h-100 p-4 text-center border-0 shadow">
+
+                        <i class="fa-solid fa-user-tie fa-3x text-success mb-3"></i>
+
+                        <h4 class="fw-bold">
+
+                            Certified Trainers
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Professional trainers guide you
+                            through every workout.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card h-100 p-4 text-center border-0 shadow">
+
+                        <i class="fa-solid fa-heart-pulse fa-3x text-danger mb-3"></i>
+
+                        <h4 class="fw-bold">
+
+                            Healthy Lifestyle
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Personalized fitness plans,
+                            diet guidance and wellness support.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===========================
+        Membership Plans
+=========================== -->
+
+    <section id="plans" class="py-5 reveal">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">
+                    MEMBERSHIP PLANS
+                </span>
+
+                <h2 class="display-5 fw-bold mt-3">
+
+                    Choose Your
+                    <span class="text-warning">
+                        Perfect Plan
+                    </span>
+
+                </h2>
+
+                <p class="text-muted">
+
+                    Flexible membership plans for every fitness goal.
+
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Basic -->
 
                 <div class="col-lg-4">
 
-                    <div class="card shadow border-0 text-center p-4">
+                    <div class="card text-center p-4 h-100">
 
-                        <h3>Basic</h3>
+                        <i class="fa-solid fa-dumbbell fa-3x text-primary mb-3"></i>
 
-                        <h1 class="text-primary">
+                        <h3 class="fw-bold">
+                            Basic
+                        </h3>
+
+                        <h1 class="display-4 text-primary fw-bold">
 
                             ₹999
 
                         </h1>
 
+                        <small class="text-muted">
+                            / Month
+                        </small>
+
                         <hr>
 
                         <p>✔ Gym Access</p>
-
                         <p>✔ Cardio Zone</p>
+                        <p>✔ Locker Facility</p>
+                        <p>✔ Free Water</p>
 
-                        <p>✔ Locker</p>
-
-                        <a href="/member_login" class="btn btn-primary">
+                        <a href="/member_login" class="btn btn-primary w-100 mt-3">
 
                             Join Now
 
@@ -433,41 +566,175 @@
 
                 </div>
 
+                <!-- Premium -->
+
                 <div class="col-lg-4">
 
-                    <div class="card shadow border-0 text-center p-4">
+                    <div class="card text-center p-4 h-100 border-warning border-3 position-relative">
 
-                        <span class="badge bg-warning">
+                        <span
+                            class="badge bg-warning text-dark position-absolute top-0 start-50 translate-middle px-4 py-2">
 
-                            Most Popular
+                            ⭐ Most Popular
 
                         </span>
 
-                        <h3 class="mt-2">
+                        <i class="fa-solid fa-fire fa-3x text-warning mb-3 mt-3"></i>
+
+                        <h3 class="fw-bold">
 
                             Premium
 
                         </h3>
 
-                        <h1 class="text-success">
+                        <h1 class="display-4 text-warning fw-bold">
 
                             ₹1999
 
                         </h1>
 
+                        <small class="text-muted">
+
+                            / Month
+
+                        </small>
+
                         <hr>
 
                         <p>✔ Everything in Basic</p>
-
                         <p>✔ Personal Trainer</p>
-
                         <p>✔ Diet Plan</p>
+                        <p>✔ Unlimited Cardio</p>
+                        <p>✔ Body Assessment</p>
 
-                        <a href="/member_login" class="btn btn-success">
+                        <a href="/member_login" class="btn btn-warning w-100 mt-3">
 
-                            Join Now
+                            Join Premium
 
                         </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Elite -->
+
+                <div class="col-lg-4">
+
+                    <div class="card text-center p-4 h-100">
+
+                        <i class="fa-solid fa-crown fa-3x text-danger mb-3"></i>
+
+                        <h3 class="fw-bold">
+
+                            Elite
+
+                        </h3>
+
+                        <h1 class="display-4 text-danger fw-bold">
+
+                            ₹2999
+
+                        </h1>
+
+                        <small class="text-muted">
+
+                            / Month
+
+                        </small>
+
+                        <hr>
+
+                        <p>✔ Unlimited Gym Access</p>
+                        <p>✔ Personal Coach</p>
+                        <p>✔ Nutrition Guide</p>
+                        <p>✔ Steam Bath</p>
+                        <p>✔ VIP Support</p>
+                        <p>✔ Fitness Tracking</p>
+
+                        <a href="/member_login" class="btn btn-danger w-100 mt-3">
+
+                            Join Elite
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===========================
+        Testimonials
+=========================== -->
+
+    <section class="py-5 bg-light reveal">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">
+                    TESTIMONIALS
+                </span>
+
+                <h2 class="display-5 fw-bold mt-3">
+
+                    What Our
+                    <span class="text-warning">
+                        Members Say
+                    </span>
+
+                </h2>
+
+                <p class="text-muted">
+
+                    Thousands of members trust our gym for their fitness journey.
+
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+
+                    <div class="card border-0 shadow p-4 h-100">
+
+                        <div class="mb-3 text-warning">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+
+                        <p>
+
+                            "Amazing gym with professional trainers and
+                            excellent equipment. Highly recommended."
+
+                        </p>
+
+                        <hr>
+
+                        <h5 class="fw-bold mb-0">
+
+                            Rahul Patil
+
+                        </h5>
+
+                        <small class="text-muted">
+
+                            Member
+
+                        </small>
 
                     </div>
 
@@ -475,33 +742,77 @@
 
                 <div class="col-lg-4">
 
-                    <div class="card shadow border-0 text-center p-4">
+                    <div class="card border-0 shadow p-4 h-100">
 
-                        <h3>
+                        <div class="mb-3 text-warning">
 
-                            Elite
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
 
-                        </h3>
+                        </div>
 
-                        <h1 class="text-danger">
+                        <p>
 
-                            ₹2999
+                            "The Gym Management System makes attendance,
+                            payments and memberships extremely easy."
 
-                        </h1>
+                        </p>
 
                         <hr>
 
-                        <p>✔ Unlimited Access</p>
+                        <h5 class="fw-bold mb-0">
 
-                        <p>✔ Personal Coach</p>
+                            Sneha Joshi
 
-                        <p>✔ Nutrition Guide</p>
+                        </h5>
 
-                        <a href="/member_login" class="btn btn-danger">
+                        <small class="text-muted">
 
-                            Join Now
+                            Premium Member
 
-                        </a>
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="card border-0 shadow p-4 h-100">
+
+                        <div class="mb-3 text-warning">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+
+                        <p>
+
+                            "Best fitness experience. Modern equipment,
+                            friendly environment and certified trainers."
+
+                        </p>
+
+                        <hr>
+
+                        <h5 class="fw-bold mb-0">
+
+                            Amit Sharma
+
+                        </h5>
+
+                        <small class="text-muted">
+
+                            Elite Member
+
+                        </small>
 
                     </div>
 
@@ -513,57 +824,133 @@
 
     </section>
 
-    <section id="contact" class="bg-dark text-white py-5">
+    <!-- ===========================
+        Trainers
+=========================== -->
+
+    <section class="py-5">
 
         <div class="container">
 
-            <div class="row">
+            <div class="text-center mb-5">
 
-                <div class="col-lg-6">
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">
 
-                    <h2>
+                    OUR TRAINERS
 
-                        Contact Us
+                </span>
 
-                    </h2>
+                <h2 class="display-5 fw-bold mt-3">
 
-                    <p>
+                    Meet Our
+                    <span class="text-warning">
 
-                        📍 Shivajinagar, Pune
+                        Expert Coaches
 
-                    </p>
+                    </span>
 
-                    <p>
+                </h2>
 
-                        📞 +91 9876543210
+            </div>
 
-                    </p>
+            <div class="row g-4">
 
-                    <p>
+                <!-- Trainer 1 -->
 
-                        ✉ gym@gmail.com
+                <div class="col-lg-4 col-md-6">
 
-                    </p>
+                    <div class="card border-0 shadow text-center p-3">
+
+                        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=500&auto=format&fit=crop"
+                            class="img-fluid rounded-4 mb-3" alt="Trainer">
+
+                        <h4 class="fw-bold">
+
+                            Raj Mehta
+
+                        </h4>
+
+                        <p class="text-warning">
+
+                            Strength Coach
+
+                        </p>
+
+                        <div>
+
+                            <i class="fab fa-facebook fs-5 me-2"></i>
+                            <i class="fab fa-instagram fs-5 me-2"></i>
+                            <i class="fab fa-linkedin fs-5"></i>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <div class="col-lg-6">
+                <!-- Trainer 2 -->
 
-                    <form>
+                <div class="col-lg-4 col-md-6">
 
-                        <input type="text" class="form-control mb-3" placeholder="Your Name">
+                    <div class="card border-0 shadow text-center p-3">
 
-                        <input type="email" class="form-control mb-3" placeholder="Email">
+                        <img src="https://images.unsplash.com/photo-1549476464-37392f717541?w=500&auto=format&fit=crop"
+                            class="img-fluid rounded-4 mb-3" alt="Trainer">
 
-                        <textarea class="form-control mb-3" rows="4" placeholder="Message"></textarea>
+                        <h4 class="fw-bold">
 
-                        <button class="btn btn-warning">
+                            Priya Shah
 
-                            Send Message
+                        </h4>
 
-                        </button>
+                        <p class="text-success">
 
-                    </form>
+                            Yoga Trainer
+
+                        </p>
+
+                        <div>
+
+                            <i class="fab fa-facebook fs-5 me-2"></i>
+                            <i class="fab fa-instagram fs-5 me-2"></i>
+                            <i class="fab fa-linkedin fs-5"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Trainer 3 -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card border-0 shadow text-center p-3">
+
+                        <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=500&auto=format&fit=crop"
+                            class="img-fluid rounded-4 mb-3" alt="Trainer">
+
+                        <h4 class="fw-bold">
+
+                            Karan Singh
+
+                        </h4>
+
+                        <p class="text-danger">
+
+                            Fitness Coach
+
+                        </p>
+
+                        <div>
+
+                            <i class="fab fa-facebook fs-5 me-2"></i>
+                            <i class="fab fa-instagram fs-5 me-2"></i>
+                            <i class="fab fa-linkedin fs-5"></i>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -573,26 +960,167 @@
 
     </section>
 
+    <!-- ===========================
+        Gallery
+=========================== -->
 
-    <footer class="bg-black text-white text-center p-4">
+    <section id="gallery" class="py-5 bg-light reveal">
 
-        <h5>
+        <div class="container">
 
-            🏋️ Gym Management System
+            <div class="text-center mb-5">
 
-        </h5>
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">
 
-        <p>
+                    GALLERY
 
-            © 2026 All Rights Reserved.
+                </span>
 
-        </p>
+                <h2 class="display-5 fw-bold mt-3">
 
-        <p>
+                    Our
 
-            Developed using Flask | Bootstrap | SQLite
+                    <span class="text-warning">
 
-        </p>
+                        Fitness Gallery
+
+                    </span>
+
+                </h2>
+
+                <p class="text-muted">
+
+                    Explore our modern gym and workout environment.
+
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700"
+                        class="img-fluid rounded-4 shadow">
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=700"
+                        class="img-fluid rounded-4 shadow">
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=700"
+                        class="img-fluid rounded-4 shadow">
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=700"
+                        class="img-fluid rounded-4 shadow">
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700"
+                        class="img-fluid rounded-4 shadow">
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=700"
+                        class="img-fluid rounded-4 shadow">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="bg-dark text-white pt-5">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-4">
+
+                    <h3 class="text-warning">
+
+                        <i class="fa-solid fa-dumbbell"></i>
+
+                        GymPro
+
+                    </h3>
+
+                    <p>
+
+                        Professional Gym Management System
+
+                        for modern fitness clubs.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <h5>
+
+                        Quick Links
+
+                    </h5>
+
+                    <ul class="list-unstyled">
+
+                        <li><a href="#" class="text-light text-decoration-none">Home</a></li>
+
+                        <li><a href="#about" class="text-light text-decoration-none">About</a></li>
+
+                        <li><a href="#plans" class="text-light text-decoration-none">Plans</a></li>
+
+                        <li><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <h5>
+
+                        Follow Us
+
+                    </h5>
+
+                    <div class="fs-3">
+
+                        <i class="fab fa-facebook me-3"></i>
+
+                        <i class="fab fa-instagram me-3"></i>
+
+                        <i class="fab fa-linkedin me-3"></i>
+
+                        <i class="fab fa-youtube"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <div class="text-center">
+
+                <p class="mb-0">
+
+                    © 2026 Gym Management System.
+
+                    All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
 
     </footer>
 

@@ -1,0 +1,496 @@
+/* static/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* -------------------------------------
+   INDEX / LANDING PAGE STYLES
+-------------------------------------- */
+.navbar {
+    background: rgba(15, 23, 42, 0.9) !important;
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    color: #ffc107 !important;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    color: #f8fafc !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.6)),
+        url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1800&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero span {
+    color: #ffc107;
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    margin-top: 20px;
+    transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.pricing-card {
+    border: none;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ffffff;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* -------------------------------------
+   DASHBOARD & FORM STYLES
+-------------------------------------- */
+.form-card {
+    border: 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.form-header {
+    color: #ffffff;
+    padding: 24px 32px;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.bg-gradient-info {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.required::after {
+    content: " *";
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.form-control,
+.form-select {
+    border-radius: 12px;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.btn {
+    border-radius: 12px;
+    padding: 10px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.info-box,
+.quick-plan {
+    border: 1px dashed #cbd5e1;
+    border-radius: 16px;
+    padding: 20px;
+    background: #f8fafc;
+}
+
+
+
+
+
+/*====================================
+    Gym Management System
+    Professional UI
+====================================*/
+
+:root {
+
+    --primary: #ffb703;
+    --secondary: #1d3557;
+    --dark: #0f172a;
+    --light: #f8f9fa;
+    --white: #ffffff;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --gray: #6b7280;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, .15);
+    --radius: 18px;
+    --transition: .35s ease;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background: #f5f7fb;
+    color: #222;
+    overflow-x: hidden;
+
+}
+
+section {
+
+    padding: 90px 0;
+
+}
+
+img {
+
+    max-width: 100%;
+    display: block;
+
+}
+
+a {
+
+    text-decoration: none;
+
+}
+
+/*============================
+Navbar
+============================*/
+
+.navbar {
+
+    background: rgba(15, 23, 42, .88);
+    backdrop-filter: blur(15px);
+    transition: .4s;
+    padding: 15px 0;
+
+}
+
+.navbar.scrolled {
+
+    padding: 8px 0;
+    box-shadow: var(--shadow);
+
+}
+
+.navbar-brand {
+
+    color: var(--primary) !important;
+    font-size: 30px;
+    font-weight: 700;
+
+}
+
+.nav-link {
+
+    color: white !important;
+    font-weight: 500;
+    margin-left: 15px;
+    transition: var(--transition);
+
+}
+
+.nav-link:hover {
+
+    color: var(--primary) !important;
+
+}
+
+/*============================
+Buttons
+============================*/
+
+.btn {
+
+    border-radius: 50px;
+    transition: .35s;
+    font-weight: 600;
+    padding: 12px 28px;
+
+}
+
+.btn-warning {
+
+    background: linear-gradient(135deg, #ffb703, #ff8800);
+    border: none;
+    color: #fff;
+
+}
+
+.btn-warning:hover {
+
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(255, 183, 3, .4);
+
+}
+
+.btn-success {
+
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    border: none;
+
+}
+
+.btn-success:hover {
+
+    transform: translateY(-4px);
+
+}
+
+/*============================
+Hero
+============================*/
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    color: #fff;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, .72),
+            rgba(0, 0, 0, .72)),
+        url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1800&auto=format&fit=crop");
+
+    background-size: cover;
+    background-position: center;
+
+}
+
+.hero h1 {
+
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 1.2;
+
+}
+
+.hero span {
+
+    color: var(--primary);
+
+}
+
+.hero p {
+
+    font-size: 19px;
+    margin: 25px 0;
+
+    color: #ddd;
+
+}
+
+.hero-btn {
+
+    margin-right: 15px;
+    margin-top: 10px;
+
+}
+
+/*============================
+Glass Card
+============================*/
+
+.feature-box {
+
+    background: rgba(255, 255, 255, .12);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, .2);
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    transition: .4s;
+
+    margin-bottom: 25px;
+
+}
+
+.feature-box:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
+
+}
+
+.feature-box i {
+
+    font-size: 45px;
+
+    color: var(--primary);
+
+    margin-bottom: 20px;
+
+}
+
+/*============================
+Cards
+============================*/
+
+.card {
+
+    border: none;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition: .4s;
+
+    box-shadow: var(--shadow);
+
+}
+
+.card:hover {
+
+    transform: translateY(-12px);
+
+}
+
+.card h1 {
+
+    font-size: 48px;
+    font-weight: 700;
+
+}
+
+/*============================
+Images
+============================*/
+
+img {
+
+    border-radius: 18px;
+
+}
+
+/*============================
+Form
+============================*/
+
+.form-control {
+
+    border-radius: 12px;
+
+    padding: 14px;
+
+    border: 1px solid #ddd;
+
+}
+
+.form-control:focus {
+
+    box-shadow: none;
+
+    border-color: var(--primary);
+
+}
+
+/*============================
+Footer
+============================*/
+
+footer {
+
+    background: #0f172a;
+
+    color: white;
+
+}
+
+footer p {
+
+    color: #d1d5db;
+
+}
+
+/*============================
+Scrollbar
+============================*/
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--primary);
+
+    border-radius: 10px;
+
+}

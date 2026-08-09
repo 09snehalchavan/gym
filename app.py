@@ -23,7 +23,7 @@ def admin_required(f):
 
         if 'admin' not in session:
             flash("Please login as Admin.","warning")
-            return redirect(url_for('home'))
+            return redirect(url_for('index'))
 
         return f(*args, **kwargs)
 
@@ -35,7 +35,7 @@ def member_required(f):
 
         if 'member_id' not in session:
             flash("Please login as Member.","warning")
-            return redirect(url_for('home'))
+            return redirect(url_for('index'))
 
         return f(*args, **kwargs)
 
@@ -61,7 +61,7 @@ def generate_member_qr(member_id):
 
 
 @app.route('/')
-def home():
+def index():
     return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -159,7 +159,7 @@ def dashboard():
 def logout():
     session.clear()
     flash('Logged out successfully!', 'success')
-    return redirect(url_for('home'))
+    return redirect(url_for('index'))
 
 @app.route('/add_member', methods=['GET', 'POST'])
 @admin_required
@@ -894,7 +894,7 @@ def member_logout():
 
     flash("Logged Out Successfully", "success")
 
-    return redirect(url_for('home'))
+    return redirect(url_for('index'))
 
 @app.route('/member_payment_history')
 @member_required
