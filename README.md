@@ -140,4 +140,4 @@ Use the member credentials configured in the application for accessing the Membe
 
 ## 🌐 Live Demo
 
-👉 https://lnkd.in/ddg-TrVN
+👉 [https://lnkd.in/ddg-TrVN](https://fittrack-fitness-portal.onrender.com/)
